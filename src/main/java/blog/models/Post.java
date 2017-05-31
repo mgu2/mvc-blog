@@ -8,6 +8,13 @@ public class Post {
 	private User author;
 	private Date date = new Date();
 	
+	public Post(long id, String title, String body, User author){
+		this.id = id;
+		this.title = title;
+		this.body = body;
+		this.author = author;
+	}
+	
 	public Long getId() {
 		return id;
 	}
