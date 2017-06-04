@@ -29,14 +29,4 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping("posts/views/{id}")
-	public String view(
-			@PathVariable("id") Long id,
-			Model model
-			){
-		Post post = postService.findById(id);
-		model.addAttribute("post", post);
-		return "posts/view";
-		
-	}
 }
