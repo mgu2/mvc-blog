@@ -28,4 +28,19 @@ public class PostsController {
             model.addAttribute("post", post);
             return "posts/view";
         }
+        
+        @RequestMapping("/posts/delete/{id}")
+        public String delete(@PathVariable("id") Long id, Model model) {
+        	Post post = postService.findById(id);
+            if (post == null) {
+                notifyService.addErrorMessage("Cannot find post #" + id);
+                
+            }
+            else{
+            	notifyService.addInfoMessage("Delete Successfully");
+            	postService.deleteById(id);
+            }
+        		
+            return "redirect:/";
+        }
 }
