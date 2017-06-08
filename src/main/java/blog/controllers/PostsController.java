@@ -80,5 +80,11 @@ public class PostsController {
         	return "redirect:/";
         }
         
-        
+        @RequestMapping(value="posts/list", method=RequestMethod.GET)
+        public String listPost(
+        		Model model){
+        	
+        	model.addAttribute("posts", postService.findAll());
+        	return "posts/list";
+        }
 }
