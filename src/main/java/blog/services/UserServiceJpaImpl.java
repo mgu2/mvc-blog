@@ -38,4 +38,5 @@ public class UserServiceJpaImpl implements UserService {
 	public void deleteById(Long id) {
 	this.userRepo.delete(id);
 	}
+	
 }
